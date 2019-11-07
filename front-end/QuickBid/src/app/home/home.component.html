@@ -1,0 +1,21 @@
+<div>
+  <ul>
+    <li><a routerLink="buy" routerLinkActive='active'>Buy</a></li>
+    <!-- <li class="dropdown">
+      <a href="javascript:void(0)" class="dropbtn">Category</a>
+      <div class="dropdown-content">
+        <a href="#">Paintings</a>
+        <a href="#">Furnitures</a>
+        <a href="#">Books</a>
+      </div>
+    </li> -->
+    <li><a routerLink="sell" routerLinkActive='active'>Sell</a></li>
+    <li style="float:right"><a (click)="logout()">Logout</a></li>
+    <li style="float:right" title="View Profile">
+      <a routerLink="viewProfile" routerLinkActive='active'>{{userName}}</a>
+    </li>
+  </ul>
+</div>
+<div id="main">
+  <router-outlet> </router-outlet>
+</div>

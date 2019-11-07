@@ -1,0 +1,57 @@
+<br><br><div id="notice" *ngIf="winner">
+    <h1><span>Recent winner</span></h1>
+    <marquee>{{winner.userName}} won last round bid of {{winner.itemName}} for ₹{{winner.bidAmount}}</marquee>
+</div> <br>
+<!-- <div style="float: left;">
+ LEFT
+</div>
+<div style="float: right;">
+  RIGHT
+</div> -->
+<div id="mainB">
+    <h1>Sale Item</h1>
+    <div *ngIf="item">
+      <table style="width: 100%;  margin: 5px;">
+        <tr ><td> <img class="logo" src="{{item.imgPath}}" alt="Item Image" width="200" height="150"></td></tr>
+        <tr><td> Item Id : {{item.itemId}} </td></tr>
+        <tr><td> Item Name : {{item.itemName}} </td></tr>
+        <tr><td> Description : {{item.desc}} </td></tr>
+        <tr><td> Seller : {{item.userName}} </td></tr>
+        <tr><td> Base Price : ₹{{item.cost}} </td></tr>
+      </table>
+      <br>
+      Wallet Balance: ₹{{user.walletAmount}} <br>
+      <!-- Bidding will start in {{ this.now }}s -->
+      <br>
+      <div *ngIf="item.userName!=this.userName">
+        ₹<input class="ip" type="number" id="cost" value={{item.cost}} min={{item.cost}} max={{user.walletAmount}} placeholder="Bid amount">
+        <input class="button button2" type="submit" value="Bid More" (click)="validateBid()"> <br>
+      </div>
+      
+      <h2>Bidding History</h2>
+      <div *ngIf="item.userName===this.userName">
+        <input class="button button3" type="submit" value="End Bid" (click)="endBid()">
+      </div>
+      
+      <div *ngIf="bidders?.length > 0">
+        <table>
+            <tr>
+                <th>User</th>
+                <th>Amount</th>
+              </tr>
+            <tr *ngFor="let data of bidders">
+              <td>{{data.userName}}</td>
+              <td>₹{{data.bidAmount}}</td>
+            </tr>
+        </table>
+      </div>
+      <div *ngIf="bidders?.length === 0">
+        <div *ngIf="item.userName!=this.userName">
+          Bid has not started yet. You can be the first one to bid!
+        </div>
+      </div>
+    </div>
+    <div *ngIf="!item">
+          No item on sale, come back later.
+    </div>
+</div>

@@ -1,0 +1,44 @@
+#mainB {
+    padding: 50px;
+    padding-top: 10px;
+    border: solid black 0.05px;
+    border-left: solid #4CAF50 10px;
+}
+.ip {
+    padding: 8px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+#notice {
+    margin-top: 150px;
+    width: 100%;
+    padding: 10px;
+    border: solid grey 0.05px;
+}
+
+#notice h1 {
+    font-size: 12px;
+    text-align: center;
+}
+
+#notice h1 span {
+    display: inline;
+    border: 1px solid #ddd;
+    background: #fff;
+    padding: 5px 10px;
+    position: relative;
+    top: -1.3em;
+}
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}

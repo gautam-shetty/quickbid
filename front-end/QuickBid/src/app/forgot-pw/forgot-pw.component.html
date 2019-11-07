@@ -1,0 +1,18 @@
+<div id="main">
+  <div id="div" *ngIf="!pass">
+    <form>
+        <input class="ip" type="text" name="userName" [(ngModel)]="userName" placeholder="Username"><br>
+        What is the name of your pet? <br>
+        <input class="ip" type="text" name="ans" [(ngModel)]="ans" placeholder="Answer" required ><br><br>
+        <input class="button" type="submit" name="Forgot password" (click)="forgot()"><br>
+      </form>
+      <a class="button button4" routerLink="/login" routerLinkActive="router-link-active"> Back </a> 
+  </div>
+  <div id="div" *ngIf="pass">
+    <form>
+      Enter your new password. <br>
+      <input class="ip" type="password" name="newpass" [(ngModel)]="newpass" placeholder="New Password"><br>
+      <input class="ip" type="button" value="Reset" (click)="reset()">
+    </form>
+  </div>
+</div>

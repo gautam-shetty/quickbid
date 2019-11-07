@@ -1,0 +1,15 @@
+<div id="main">
+  <h1 style="font-size:35px; text-align:center"><font color="grey">Quick</font><font color="#4CAF50">Bid</font></h1>
+  <form (submit)="chkLogin()">
+      <input class="ip" type="text" name="userName" [(ngModel)]="userName" placeholder="Username" autocomplete="off" ng-required="expression"> <br>
+      <input class="ip" type="password" name="password" [(ngModel)]="password" placeholder="Password" ng-required="expression"> <br>
+      <a routerLink="/forgotPw" routerLinkActive="router-link-active"> Forgot Password? </a> <br>
+
+      Login as <input type="radio" name="userType" [(ngModel)]="userType" value="user">&nbsp;User
+      <input type="radio" name="userType" [(ngModel)]="userType" value="admin">&nbsp;Admin <br>
+
+      <input style="width: 100%;" class="button" type="Submit" value="Login">
+  </form>
+  <input class="button button2" style="width: 100%;" routerLink="/register" routerLinkActive="router-link-active" value="Register"> 
+</div>
+<router-outlet></router-outlet>

@@ -1,0 +1,19 @@
+<div id="main">
+  <h1>Registration</h1>
+  <form (submit)="validateUser()">
+      <input class="ip" type="text" name="fname" [(ngModel)]="user.fname" placeholder="First Name">
+      <input class="ip" type="text" name="lname" [(ngModel)]="user.lname" placeholder="Last Name"> <br>
+      <input class="ip" type="number" name="phNumber" [(ngModel)]="user.phNumber" placeholder="Phone Number" minlength="10" maxlength="10">
+      <input class="ip" type="date" name="dob" [max]="this.todayMax" [(ngModel)]="user.dob" placeholder="D.O.B"> <br>
+      <textarea class="ip" id="address" name="address" [(ngModel)]="user.address" rows="3" cols="42" placeholder="Address... "></textarea> <br>
+      <input class="ip" type="text" name="userName" [(ngModel)]="user.userName" placeholder=" New username">
+      <input class="ip" type="password" name="password" [(ngModel)]="user.password" placeholder="New password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"> <br>
+      Sequrity question: What is the name of your pet? &nbsp; &nbsp;
+      <input class="ip" type="text" name="key" [(ngModel)]="user.key" placeholder="Answer"> <br>
+      <input class="ip" type="hidden" name="walletAmount" [(ngModel)]="user.userId" value="0">
+      <input style="width: 100%;" class="ip" class="button" type="submit" value="Register">
+  </form>
+  <a class="button button4" routerLink="/login" routerLinkActive="router-link-active"> Back </a> 
+</div>
+
+<router-outlet></router-outlet>

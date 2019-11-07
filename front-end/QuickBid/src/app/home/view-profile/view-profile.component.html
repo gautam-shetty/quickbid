@@ -1,0 +1,39 @@
+<h3>Logged in as</h3><h1>{{user.fname}} {{user.lname}}</h1>
+<div *ngIf="visibility==='show'">
+  <table style="width: 100%; margin: 5px;">
+    <tr> <td> User Name </td> <td> {{userName}} </td> </tr>
+    <tr> <td> First Name </td> <td> {{user.fname}} </td> </tr>
+    <tr> <td> Last Name </td> <td> {{user.lname}} </td> </tr>
+    <tr> <td> D.O.B </td> <td> {{this.dob}} </td> </tr>
+    <tr> <td> Phone Number </td> <td> {{user.phNumber}} </td> </tr>
+    <tr> <td> Address </td> <td> {{user.address}} </td> </tr>
+  </table>
+
+<input class="button button2" type="submit" value="Edit" (click)="toggle()">
+<!-- <input type="submit" value="Delete Profile"> -->
+<input class="button button4" type="submit" value="Save details as .pdf" (click)=downloadPDF()>
+
+<table style="width: 100%; margin: 5px;">
+  <tr>
+    <td> Wallet Balance: </td> <td> ₹{{user.walletAmount}} </td>
+  </tr>
+  <tr>
+    <td> <input class="button button2" type="submit" value="Add Money" (click)=addMoney()> </td>
+    <td> ₹<input class="ip" id="money" type="number" min="0" oninput="validity.valid||(value='');" placeholder="Amount"> </td>
+    <td> <input class="button" type="submit" value="Withdraw Money" (click)=withdrawMoney()> </td>
+  </tr>
+</table>
+</div>
+
+<span *ngIf="visibility==='edit'">
+    <form (submit)="updateUser()">
+      <tr> <td> User Name </td> <td> <input class="ip2" type="text" name="username" value="{{userName}}" disabled> </td> </tr>
+      <tr> <td> First Name </td> <td> <input class="ip2" type="text" name="fname" [(ngModel)]="user.fname" placeholder="{{user.fname}}"> </td> </tr>
+      <tr> <td> Last Name </td> <td> <input class="ip2" type="text" name="lname" [(ngModel)]="user.lname" placeholder="{{user.lname}}"> </td> </tr>
+      <tr> <td> Phone Number </td> <td> <input class="ip2" type="number" name="phNumber" [(ngModel)]="user.phNumber" placeholder="{{user.phNumber}}"> </td> </tr>
+      <tr> <td> DOB </td> <td> <input class="ip2" type="text" name="dob" value="{{this.dob}}" disabled> </td> </tr>
+      <tr> <td> Address </td> <td> <textarea class="ip2" id="address" name="address" [(ngModel)]="user.address" rows="3" cols="42" placeholder="{{user.address}}"></textarea> </td> </tr>
+      <tr> <td colspan="2"> <input style="width: 100%;" class="ip2" class="button" type="submit" value="Save"> </td> </tr>
+    </form>
+    <input class="button button4" type="submit" value="Cancel" (click)="toggle()">
+  </span>

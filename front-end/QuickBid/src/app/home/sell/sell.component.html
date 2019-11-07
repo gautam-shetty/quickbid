@@ -1,0 +1,18 @@
+<div id="main">
+  <h1>Sell Item</h1>
+  <form (submit)="saveItem()">
+      Item ID: {{this.item.itemId}} <br>
+      <!-- <input type="text" name="itemId" [(ngModel)]="item.itemId" placeholder="Item ID" disabled> <br> -->
+      <input class="ip" type="text" name="itemName" [(ngModel)]="item.itemName" placeholder="Item Name"><br>
+      <input class="ip" type="number" name="cost" [(ngModel)]="item.cost" placeholder="Item Cost"><br>
+      <textarea class="ip" id="desc" id="desc" name="desc" [(ngModel)]="item.desc" rows="3" cols="42" placeholder="Item description"></textarea> <br>
+      <!-- <input type="text" name="imgPath" value="../assets/default.png" disabled> <br> -->
+
+      <input type="file" (change)="upload($event.target.files) " >
+
+      <!-- <input type="hidden" name="userName" value="{{this.userName}}" disabled> <br>
+      <input type="hidden" name="status" value="=false"> <br> -->
+
+      <input class="button" type="submit" value="Submit">
+  </form>
+</div>  

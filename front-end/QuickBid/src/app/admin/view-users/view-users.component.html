@@ -1,0 +1,28 @@
+<h1>Users list</h1>
+<div *ngIf="users?.length > 0">
+  <table id="tab">
+    <tr>
+      <th> User Name </th>
+      <th> DOB </th>
+      <th> First Name </th>
+      <th> Last Number </th>
+      <th> Phone Number </th>
+      <th> Address </th>
+      <th> Balance </th>
+      <th></th>
+    </tr>
+
+    <tr *ngFor="let usr of users">
+      <td> {{usr.userName}} </td>
+      <td> {{usr.dob | date: 'dd/MM/yyyy'}} </td>
+      <td> {{usr.fname}} </td>
+      <td> {{usr.lname}} </td>
+      <td> {{usr.phNumber}} </td>
+      <td> {{usr.address}} </td>
+      <td> {{usr.walletAmount}} </td>
+      <td>
+          <input class="button button3" type="submit" value="delete" (click)="deleteUser(usr.userName)">
+      </td>
+    </tr>
+  </table>
+</div>

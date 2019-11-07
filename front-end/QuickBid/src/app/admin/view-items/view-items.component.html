@@ -1,0 +1,27 @@
+<h1>Items list</h1>
+<div *ngIf="items?.length > 0">
+    <table id="tab">
+      <tr>
+        <th> Item Id </th>
+        <th> User Name </th>
+        <th> Item Name </th>
+        <th> Description </th>
+        <th> Base price </th>
+        <th> Status </th>
+        <th></th>
+      </tr>
+  
+      <tr *ngFor="let item of items">
+        <td>{{item.itemId}}</td>
+        <td>{{item.userName}}</td>
+        <td>{{item.itemName}}</td>
+        <td>{{item.desc}}</td>
+        <td>{{item.cost}} </td>
+        <td>{{item.status}} </td>
+        <td>
+          <span *ngIf="!item.status"><input class="button" type="submit" value="Approve" (click)="approve(item.itemId)" [disabled]="pass === false"></span>
+          <span *ngIf="item.status"><input class="button button3" type="submit" value="Disapprove" (click)="disapprove(item.itemId)"></span>
+        </td>
+      </tr>
+    </table>
+  </div>
